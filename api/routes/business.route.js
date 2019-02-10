@@ -40,10 +40,14 @@ businessRoutes.route('/edit/:id').get(function (req, res) {
 
 
 // Defined update route
-businessRoutes.route('/update/:id').post(function (req, res) {
-  Business.findById(req.params.id, function (err, next, business) {
+businessRoutes.route('/update/:id').post(function (req, res, next) {
+  console.log('updating in node');
+  Business.findById(req.params.id, function (err, business) {
     if(!business){
-      return next(new Error('Could not load Document'));
+      // return next(new Error('Could not load Document'));
+      err = new Error('Could not load Document');
+      err.status = 404;
+      return next(err);
     } else {
       business.person_name = req.body.person_name;
       business.business_name = req.body.business_name;
