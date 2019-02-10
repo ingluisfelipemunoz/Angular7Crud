@@ -4,7 +4,7 @@ const express = require('express'),
   cors = require('cors'),
   mongoose = require('mongoose');
   config = require('./DB');
-  
+
 
   //set configuration
   const businessRoute = require('./routes/business.route');
@@ -18,8 +18,11 @@ const express = require('express'),
   app.use(bodyParser.json());
   app.use(cors());
   app.use('/business', businessRoute);
-  let port = process.env.PORT || 4000;
+  let port = process.env.PORT;
 
-  const server = app.listen(function() {
+
+  console.log('listening on port 3200');
+  const server = app.listen(3200);
+  /*const server = app.listen(function() {
     console.log('listening on port '+port);
-  });
+  });*/

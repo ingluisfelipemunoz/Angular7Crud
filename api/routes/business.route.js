@@ -24,6 +24,7 @@ businessRoutes.route('/').get(function (req, res) {
     if(err) {
       console.log(err);
     } else {
+      console.log('se estan mostrando los elementos');
       res.json(business);
     }
   });
