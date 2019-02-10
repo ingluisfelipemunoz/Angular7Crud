@@ -6,7 +6,7 @@ import { GstEditComponent } from './gst-edit/gst-edit.component';
 
 const routes: Routes = [
   {
-    path: 'busines/create',
+    path: 'business/create',
     component: GstAddComponent
   },
   {
