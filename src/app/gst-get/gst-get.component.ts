@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BusinessService } from '../business.service';
+import Business from '../Bussines';
 
 @Component({
   selector: 'app-gst-get',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GstGetComponent implements OnInit {
 
-  constructor() { }
+  businesses: Business[];
+
+  constructor(private bs: BusinessService) { }
 
   ngOnInit() {
+    this.bs
+      .getBusinesses()
+      .subscribe((data: Business[]) => {
+        this.businesses = data;
+      });
   }
 
 }
