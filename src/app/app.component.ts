@@ -20,7 +20,7 @@ export class AppComponent {
   constructor(private _loadingBar: SlimLoadingBarService, private _router: Router) {
     this._router.events.subscribe((event: Event): void => {
       if(event instanceof NavigationStart) {
-        this.loadingBar.start();
+        this._loadingBar.start();
       }
 
       if(event instanceof NavigationEnd) {
