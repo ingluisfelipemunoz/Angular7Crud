@@ -21,4 +21,9 @@ export class GstGetComponent implements OnInit {
       });
   }
 
+    deleteBusiness(id) {
+      this.bs.deleteBusiness(id).subscribe(res =>
+        console.log('Deleted'));
+    }
+
 }

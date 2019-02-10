@@ -1,10 +1,10 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <td>Person Name</td>
-      <td>Business Name</td>
-      <td>GST Number</td>
-      <td colspan="2">Actions</td>
+      <td><strong>Person Name</strong></td>
+      <td><strong>Business Name</strong></td>
+      <td><strong>GST Number</strong></td>
+      <td colspan="2"><strong>Actions</strong></td>
     </tr>
   </thead>
 
@@ -14,7 +14,7 @@
       <td>{{ business.business_name }}</td>
       <td>{{ business.business_gst_number }}</td>
       <td><a [routerLink]="['edit/', business._id]" class="btn btn-primary">Edit</a></td>
-      <td><a [routerLink]="" class="btn btn-danger">Delete</a></td>
+      <td><a [routerLink]="" class="btn btn-danger" (click)="deleteBusiness(business._id)">Delete</a></td>
 
     </tr>
   </tbody>
